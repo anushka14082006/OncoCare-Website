@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | OncoCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .hero-about {
+            background: linear-gradient(to right, #d5b0f2, #f2e1ff);
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5e4b8b;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-about h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            z-index: 2;
+            color: #8e44ad;
+        }
+        
+        .hero-about::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            background: #fff;
+            bottom: -1px;
+            left: 0;
+            border-top-left-radius: 50% 20%;
+            border-top-right-radius: 50% 20%;
+        }
+        
+        .breadcrumb-style {
+            text-align: center;
+            color: #8e44ad;
+            margin-top: 10px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #5e4b8b;
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: #9b59b6;
+            margin: 1rem auto;
+            border-radius: 50px;
+        }
+        
+        .icon-style {
+            font-size: 3rem;
+            color: #c89fea;
+            margin-bottom: 1rem;
+        }
+        
+        .glass {
+            background: rgba(243, 229, 251, 0.85);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 30px rgba(155, 89, 182, 0.12);
+        }
+        
+        .about-img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .split-section {
+            padding: 5rem 0;
+        }
+        
+        .curve-top {
+            position: relative;
+            background-color: #8e44ad;
+            color: white;
+        }
+        
+        .curve-top::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            border-bottom-left-radius: 100% 20%;
+            border-bottom-right-radius: 100% 20%;
+        }
+        
+        .icon-bg {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            padding: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-bg:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-about h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .split-section {
+                padding: 3rem 0;
+            }
+        }
+        
+        .bg-purple-light {
+            background-color: rgba(155, 89, 182, 0.1);
+        }
+        
+        .text-purple {
+            color: #8e44ad;
+        }
+        
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .glass {
+            background: rgba(88, 55, 116, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .breadcrumb-style {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 576px) {
+            .hero-about h1 {
+                font-size: 2rem;
+            }
+            .breadcrumb-style {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-icon me-2"><i class="bi bi-heart-pulse-fill text-purple fs-4"></i></div>
+                <span class="brand-text fw-bold text-purple">Onco<span style="color: #a043b4;">Care</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="#" class="btn btn-outline-primary d-none d-lg-block">Book Appointment</a>
+        </div>
+    </nav>
+
+    <section class="hero-about text-center py-5 px-3" data-aos="zoom-in">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">About Us</h1>
+            <div class="breadcrumb-style" data-aos="fade-up" data-aos-delay="100">
+                <a href="index.html" class="text-decoration-none text-purple">Home</a> &nbsp;|&nbsp;
+                <span>About</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 position-relative overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center g-5 flex-md-row-reverse">
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="images/about_hero.jpeg" alt="About Image" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="p-4 bg-white rounded-4 shadow-sm border border-light-subtle">
+                        <h2 class="section-title">Who We Are</h2>
+                        <div class="section-divider mb-3"></div>
+                        <p class="text-muted">
+                            At <strong>OncoCare</strong>, we’re more than a cancer center—we’re a movement of healing, innovation, and compassion. Founded by a collective of visionary oncologists, we’ve evolved into a global name for trust and excellence
+                            in cancer care.
+                        </p>
+                        <p class="text-muted mb-0">
+                            With cutting-edge technologies, research-led practices, and a deeply human approach, we’re committed to restoring health, hope, and happiness in every life we touch.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 position-relative">
+        <div class="container">
+            <div class="text-center mx-auto" style="max-width: 700px;" data-aos="fade-up">
+                <div class="icon-circle mb-3 bg-purple-light">
+                    <i class="bi bi-bullseye icon-style text-purple"></i>
+                </div>
+                <h2 class="section-title">Our Mission</h2>
+                <div class="section-divider"></div>
+                <p class="text-muted px-3">
+                    At OncoCare, our mission is to deliver <strong>compassionate, precision-driven cancer care</strong> through cutting-edge technologies and empathetic clinical practices. We strive to remove fear from the journey and replace it with
+                    hope, strength, and personalized healing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 " style="position: relative;">
+        <div class="container">
+            <div class="text-center mx-auto" style="max-width: 700px;" data-aos="fade-up">
+                <div class="icon-circle mb-3 bg-purple-light">
+                    <i class="bi bi-eye icon-style text-purple"></i>
+                </div>
+                <h2 class="section-title">Our Vision</h2>
+                <div class="section-divider"></div>
+                <p class="text-muted px-3">
+                    We envision a world where <strong>cancer care is not limited by geography or resources</strong>. OncoCare is building a future where innovation meets empathy—ensuring accessible, ethical, and transformative oncology for all.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-white pt-5 pb-4" style="background: linear-gradient(to right, #2c1023, #1f2937);">
+        <div class="container">
+
+            <div class="row mb-5 align-items-center text-center text-lg-start">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <h3 class="fw-bold">Subscribe to Newsletter</h3>
+                </div>
+                <div class="col-lg-6">
+                    <form class="d-flex flex-column flex-sm-row align-items-stretch">
+                        <input type="email" class="form-control me-sm-2 mb-2 mb-sm-0" placeholder="Your Email Address" required>
+                        <button class="btn btn-purple w-20 w-sm-auto" type="submit">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <h4 class="fw-bold mb-3 text-purple">OncoCare</h4>
+                    <p><i class="bi bi-geo-alt-fill me-2 text-purple"></i> New Delhi, India</p>
+                    <p><i class="bi bi-envelope-fill me-2 text-purple"></i> info@oncocare.com</p>
+                    <p><i class="bi bi-telephone-fill me-2 text-purple"></i> +91-234-567-8900</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3 text-purple">Opening Hours</h5>
+                    <ul class="list-unstyled small">
+                        <li class="d-flex justify-content-between"><span>Mon – Tues</span><span>09:00AM - 6:00PM</span></li>
+                        <li class="d-flex justify-content-between"><span>Wed – Thu</span><span>09:00AM - 6:00PM</span></li>
+                        <li class="d-flex justify-content-between"><span>Fri – Sat</span><span>09:00AM - 6:00PM</span></li>
+                        <li class="d-flex justify-content-between"><span>Sunday</span><span>Emergency Only</span></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3 text-purple">Useful Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3 text-purple">Departments</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="services.html">Radiation Oncology</a></li>
+                        <li><a href="services.html">Surgical Oncology</a></li>
+                        <li><a href="services.html">Neuro Oncology</a></li>
+                        <li><a href="services.html">Geriatric Oncology</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="footer-divider mt-5">
+
+            <div class="text-center small mt-4">
+                OncoCare Hospital ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> All Rights Reserved | Designed & Developed by
+                <a href="https://edgelinktechnology.com/" target="_blank" class="text-light fw-semibold text-decoration-underline">
+        EdgeLink Technology Pvt. Ltd.
+      </a>
+            </div>
+
+        </div>
+    </footer>
+
+    \
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+
+</html>

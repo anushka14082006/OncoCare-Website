@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | OncoCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .hero-about {
+            background: linear-gradient(to right, #d5b0f2, #f2e1ff);
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5e4b8b;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-about h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            z-index: 2;
+            color: #8e44ad;
+        }
+        
+        .hero-about::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            background: #fff;
+            bottom: -1px;
+            left: 0;
+            border-top-left-radius: 50% 20%;
+            border-top-right-radius: 50% 20%;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #5e4b8b;
+        }
+        
+        .service-box {
+            background: #fff;
+            border-radius: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 4px 20px rgba(155, 89, 182, 0.08);
+        }
+        
+        .service-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(155, 89, 182, 0.15);
+        }
+        
+        .service-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .service-img-wrapper img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-box:hover img {
+            transform: scale(1.05);
+        }
+        /* Ripple Effect */
+        
+        .ripple-circle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: rgba(155, 89, 182, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: scale(0);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+            z-index: 1;
+        }
+        
+        .ripple-box:hover .ripple-circle {
+            transform: scale(8);
+            opacity: 1;
+        }
+        
+        .service-box {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(155, 89, 182, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+        
+        .service-box:hover {
+            box-shadow: 0 20px 45px rgba(155, 89, 182, 0.2);
+        }
+        
+        .ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #a043b4;
+            color: #fff;
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-bottom-left-radius: 15px;
+        }
+        
+        .service-box .icon-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 2rem;
+            color: #ffffff33;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-box:hover .icon-overlay {
+            transform: rotate(20deg) scale(1.2);
+            color: #a043b455;
+        }
+        
+        .service-content ul {
+            padding-left: 1rem;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .service-content ul li {
+            color: #5e4b8b;
+            margin-bottom: 5px;
+            list-style-type: disc;
+        }
+        
+        .gradient-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(155, 89, 182, 0.15), rgba(255, 255, 255, 0.1), rgba(155, 89, 182, 0.15));
+            transform: skewX(-20deg);
+            transition: 0.7s;
+        }
+        
+        .service-box:hover.gradient-hover::before {
+            left: 100%;
+        }
+        
+        .service-box {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(155, 89, 182, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-img-wrapper img {
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            flex-grow: 1;
+        }
+        
+        .service-box .p-4 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .service-content ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .ribbon {
+            z-index: 2;
+        }
+        
+        @media (min-width: 768px) {
+            .service-img-wrapper img {
+                height: 200px;
+            }
+        }
+        
+        .breadcrumb-style {
+            text-align: center;
+            color: #8e44ad;
+            margin-top: 10px;
+        }
+        
+        .breadcrumb-style {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 576px) {
+            .hero-about h1 {
+                font-size: 2rem;
+            }
+            .breadcrumb-style {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-icon me-2"><i class="bi bi-heart-pulse-fill text-purple fs-4"></i></div>
+                <span class="brand-text fw-bold text-purple">Onco<span style="color: #a043b4;">Care</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="#" class="btn btn-outline-primary d-none d-lg-block">Book Appointment</a>
+        </div>
+    </nav>
+
+    <section class="hero-about text-center py-5 px-3" data-aos="zoom-in">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">Our Services</h1>
+            <div class="breadcrumb-style" data-aos="fade-up" data-aos-delay="100">
+                <a href="index.html" class="text-decoration-none text-purple">Home</a> &nbsp;|&nbsp;
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="row g-4">
+        <div class="container-fluid px-4 px-md-5">
+
+            <div class="row g-4 align-items-stretch">
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-box ripple-box position-relative gradient-hover" data-tilt data-tilt-max="8">
+                        <span class="ribbon">Top Rated</span>
+                        <div class="service-img-wrapper">
+                            <img src="images/service1.jpg" alt="Radiation Therapy" class="img-fluid w-100">
+                            <span class="ripple-circle"></span>
+                        </div>
+                        <div class="icon-overlay"><i class="bi bi-radioactive"></i></div>
+                        <div class="p-4 service-content">
+                            <h5 class="fw-bold text-purple">Radiation Therapy</h5>
+                            <p class="text-muted">Precision treatments targeting tumors while minimizing damage to healthy tissues.</p>
+                            <ul>
+                                <li>Non-invasive delivery</li>
+                                <li>3D image guidance</li>
+                                <li>High success rates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box ripple-box position-relative gradient-hover" data-tilt>
+                        <span class="ribbon">Most Popular</span>
+                        <div class="service-img-wrapper">
+                            <img src="images/service2.jpg" alt="Chemotherapy" class="img-fluid w-100">
+                            <span class="ripple-circle"></span>
+                        </div>
+                        <div class="icon-overlay"><i class="bi bi-droplet-half"></i></div>
+                        <div class="p-4 service-content">
+                            <h5 class="fw-bold text-purple">Chemotherapy</h5>
+                            <p class="text-muted">Personalized drug-based treatments monitored by our expert oncology team.</p>
+                            <ul>
+                                <li>Custom dosage plans</li>
+                                <li>Supportive care included</li>
+                                <li>Daycare facility available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-box ripple-box position-relative gradient-hover" data-tilt>
+                        <span class="ribbon">Advanced</span>
+                        <div class="service-img-wrapper">
+                            <img src="images/service3.jpg" alt="Immunotherapy" class="img-fluid w-100">
+                            <span class="ripple-circle"></span>
+                        </div>
+                        <div class="icon-overlay"><i class="bi bi-shield-check"></i></div>
+                        <div class="p-4 service-content">
+                            <h5 class="fw-bold text-purple">Immunotherapy</h5>
+                            <p class="text-muted">Boosting the immune system to fight cancer more effectively and naturally.</p>
+                            <ul>
+                                <li>Minimal side effects</li>
+                                <li>Precision-targeted</li>
+                                <li>Ideal for advanced cases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-box ripple-box position-relative gradient-hover" data-tilt>
+                        <span class="ribbon">Expert Team</span>
+                        <div class="service-img-wrapper">
+                            <img src="images/service4.jpg" alt="Surgical Oncology" class="img-fluid w-100">
+                            <span class="ripple-circle"></span>
+                        </div>
+                        <div class="icon-overlay"><i class="bi bi-scissors"></i></div>
+                        <div class="p-4 service-content">
+                            <h5 class="fw-bold text-purple">Surgical Oncology</h5>
+                            <p class="text-muted">State-of-the-art surgeries with advanced robotics and faster recovery outcomes.</p>
+                            <ul>
+                                <li>Minimal incision tech</li>
+                                <li>Short hospital stays</li>
+                                <li>Highly experienced surgeons</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-box ripple-box position-relative gradient-hover" data-tilt>
+                        <span class="ribbon">Supportive</span>
+                        <div class="service-img-wrapper">
+                            <img src="images/service5.jpg" alt="Palliative Care" class="img-fluid w-100">
+                            <span class="ripple-circle"></span>
+                        </div>
+                        <div class="icon-overlay"><i class="bi bi-emoji-smile"></i></div>
+                        <div class="p-4 service-content">
+                            <h5 class="fw-bold text-purple">Palliative Care</h5>
+                            <p class="text-muted">Comfort-centered care focusing on pain relief, emotional strength, and dignity.</p>
+                            <ul>
+                                <li>24x7 compassionate care</li>
+                                <li>Pain & symptom management</li>
+                                <li>Family counseling support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-box ripple-box position-relative gradient-hover" data-tilt>
+                        <span class="ribbon">Preventive</span>
+                        <div class="service-img-wrapper">
+                            <img src="images/service6.jpg" alt="Genetic Counseling" class="img-fluid w-100">
+                            <span class="ripple-circle"></span>
+                        </div>
+                        <div class="icon-overlay"><i class="bi bi-graph-up-arrow"></i></div>
+                        <div class="p-4 service-content">
+                            <h5 class="fw-bold text-purple">Genetic Counseling</h5>
+                            <p class="text-muted">Early detection through family history and genetic risk assessments.</p>
+                            <ul>
+                                <li>Family-wide screening</li>
+                                <li>Risk assessment reports</li>
+                                <li>Genomic test guidance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-white pt-5 pb-4" style="background: linear-gradient(to right, #2c1023, #1f2937);">
+        <div class="container">
+
+            <div class="row mb-5 align-items-center text-center text-lg-start">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <h3 class="fw-bold">Subscribe to Newsletter</h3>
+                </div>
+                <div class="col-lg-6">
+                    <form class="d-flex flex-column flex-sm-row align-items-stretch">
+                        <input type="email" class="form-control me-sm-2 mb-2 mb-sm-0" placeholder="Your Email Address" required>
+                        <button class="btn btn-purple w-20 w-sm-auto" type="submit">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <h4 class="fw-bold mb-3 text-purple">OncoCare</h4>
+                    <p><i class="bi bi-geo-alt-fill me-2 text-purple"></i> New Delhi, India</p>
+                    <p><i class="bi bi-envelope-fill me-2 text-purple"></i> info@oncocare.com</p>
+                    <p><i class="bi bi-telephone-fill me-2 text-purple"></i> +91-234-567-8900</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3 text-purple">Opening Hours</h5>
+                    <ul class="list-unstyled small">
+                        <li class="d-flex justify-content-between"><span>Mon – Tues</span><span>09:00AM - 6:00PM</span></li>
+                        <li class="d-flex justify-content-between"><span>Wed – Thu</span><span>09:00AM - 6:00PM</span></li>
+                        <li class="d-flex justify-content-between"><span>Fri – Sat</span><span>09:00AM - 6:00PM</span></li>
+                        <li class="d-flex justify-content-between"><span>Sunday</span><span>Emergency Only</span></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3 text-purple">Useful Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3 text-purple">Departments</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="services.html">Radiation Oncology</a></li>
+                        <li><a href="services.html">Surgical Oncology</a></li>
+                        <li><a href="services.html">Neuro Oncology</a></li>
+                        <li><a href="services.html">Geriatric Oncology</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="footer-divider mt-5">
+
+            <div class="text-center small mt-4">
+                OncoCare Hospital ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> All Rights Reserved | Designed & Developed by
+                <a href="https://edgelinktechnology.com/" target="_blank" class="text-light fw-semibold text-decoration-underline">
+        EdgeLink Technology Pvt. Ltd.
+      </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        const rippleBoxes = document.querySelectorAll('.ripple-box');
+
+        rippleBoxes.forEach(box => {
+            box.addEventListener('mouseenter', e => {
+                const ripple = box.querySelector('.ripple-circle');
+                const rect = box.getBoundingClientRect();
+                ripple.style.left = `${e.clientX - rect.left}px`;
+                ripple.style.top = `${e.clientY - rect.top}px`;
+            });
+        });
+
+        VanillaTilt.init(document.querySelectorAll(".service-box"), {
+            max: 8,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.15,
+        });
+
+        const rippleboxes = document.querySelectorAll('.ripple-box');
+        rippleBoxes.forEach(box => {
+            box.addEventListener('mouseenter', e => {
+                const ripple = box.querySelector('.ripple-circle');
+                const rect = box.getBoundingClientRect();
+                ripple.style.left = `${e.clientX - rect.left}px`;
+                ripple.style.top = `${e.clientY - rect.top}px`;
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>
